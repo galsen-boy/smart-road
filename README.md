@@ -2,9 +2,9 @@
 [Project description](https://github.com/01-edu/public/blob/master/subjects/smart-road/README.md), completed during grit:lab in September 2023.
 
 #### Authors:
-- [Viktor Boman](https://github.com/bomanviktor)
-- [Johannes Eckerman](https://github.com/jo-eman)
-- [André Teetor](https://github.com/FinnTune)
+- [Mouhamadu Fadilou Diop](https://learn.zone01dakar.sn/git/mouhamadoufadiop/smart-road)
+- [Serigne Abdou Khadre Wade](https://learn.zone01dakar.sn/git/serwade/)
+- [](https://learn.zone01dakar.sn/git//)
 
 ### Run
 Clone the repository, go into root and write:
