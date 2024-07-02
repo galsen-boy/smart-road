@@ -200,7 +200,7 @@ impl Car {
     }
 
 
-    /// Déplace la voiture le long de son propre Path en incrémentant path.current.
+    /// Déplace la voiture le long de son propre `Path` en incrémentant `path.current.
 /// S'arrête s'il y a une voiture dans le secteur devant.
     fn move_in_path(&mut self, cars: &[Car]) {
         if self.index + 2 > self.path.sectors.len() {
