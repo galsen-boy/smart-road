@@ -51,19 +51,20 @@ impl Car {
         }
     }
 
-    /// ### ray_casting
-    /// Check if there are any cars in front of self are inside the `SCAN_DISTANCE`.
-    /// If these cars have a shorter distance to the Sortir than self, brake according to the closest
-    /// of these cars.
+    
+  /* Vérifie s'il y a des voitures devant soi dans la `SCAN_DISTANCE`.
+Si ces voitures ont une distance plus courte vers la sortie que soi-même, freine selon la plus proche
+ de ces voitures.*/
+
     pub fn ray_casting(&mut self, cars: &[Car]) {
-        // Loop through all cars which are within collision range (one sector)
+        // Parcourir toutes les voitures qui sont dans la portée de collision (une secteur).
         let mut distance = SCAN_DISTANCE;
         for car in cars.iter().filter(|c| {
             self.longer_distance_to_exit(c)
                 && self.calc_dist(c) < SCAN_DISTANCE
                 && self.crossing_paths(c)
         }) {
-            // Only brake according to shortest distance
+            // Freiner uniquement en fonction de la distance la plus courte.
             if self.calc_dist(car) > distance {
                 continue;
             }
@@ -126,8 +127,8 @@ impl Car {
         }
     }
 
-    /// ### crossing_paths
-    /// Check if a car has a crossing path with self
+
+    /// Vérifier si une voiture croise le chemin de la voiture actuelle.
     fn crossing_paths(&self, other: &Car) -> bool {
         for sector in &self.path.sectors[self.index..=self.index + 2] {
             if sector.eq(&other.sector(1))
@@ -139,8 +140,7 @@ impl Car {
         false
     }
 
-    /// ### longer_distance_to_exit
-    /// Check if `self` has a longer distance to the Sortir than `other`
+    /// Vérifie si self a une distance plus longue jusqu'à la sortie que other.
     fn longer_distance_to_exit(&self, other: &Car) -> bool {
         self.path.sectors.len() as f32 * SECTOR_WIDTH
             - (self.index as f32 * SECTOR_WIDTH + self.sector_pos())
@@ -157,8 +157,8 @@ impl Car {
         }
     }
 
-    /// ### center_car
-    /// get the center point of a car
+    
+    /// Obtenir le point central d'une voiture.
     pub fn center_car(&self) -> (f32, f32) {
         let top = self.borders().top;
         let right = self.borders().right;
@@ -167,10 +167,7 @@ impl Car {
         (left + ((right - left) / 2.0), top + ((bottom - top) / 2.0))
     }
 
-    /// ### calculate_distance
-    /// used to calculate the distance between two cars
-    /// center points of both cars are used and then the distance formula:
-    ///
+    /// Utilisé pour calculer la distance entre deux voitures. Les points centraux des deux voitures sont utilisés, puis la formule de distance est appliquée :
     /// `sqrt(dx^2 + dy^2)`
     pub fn calc_dist(&self, other: &Car) -> f32 {
         let (x, y) = self.center_car();
