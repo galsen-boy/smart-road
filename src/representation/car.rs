@@ -7,8 +7,10 @@ use macroquad::prelude::*;
 pub fn representation_car(car: &Car, textures: &[Texture2D]) {
     let texture = match car.model {
         Model::Standard => &textures[0],
-        Model::Audi => &textures[1],
-        Model::Viper => &textures[2],
+        Model::Sport => &textures[1],
+        Model::TaxiVert => &textures[2],
+        Model::TaxiOrange => &textures[3],
+        Model::TaxiNoire => &textures[4],
     };
     // Determine which sprite to use based on the car's direction
     let rotation: f32 = match car.moving {

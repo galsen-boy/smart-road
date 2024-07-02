@@ -33,8 +33,10 @@ pub struct Borders {
 #[derive(Debug, Clone, PartialEq)]
 pub enum Model {
     Standard,
-    Audi,
-    Viper,
+    Sport,
+    TaxiVert,
+    TaxiOrange,
+    TaxiNoire,
 }
 // Adjust odds of getting certain cars here. Might scratch and use `gen_range` instead
 
@@ -80,8 +82,10 @@ impl Car {
             direction,
             time: SystemTime::now(),
             model: match gen_range(0, 5) {
-                0 => Model::Viper,
-                1 => Model::Audi,
+                0 => Model::TaxiVert,
+                1 => Model::TaxiOrange,
+                2 => Model::TaxiNoire,
+                3 => Model::Sport,
                 _ => Model::Standard,
             },
         }
