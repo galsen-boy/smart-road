@@ -2,7 +2,7 @@ use crate::config::{CLOSE_CALL_DISTANCE, COLLISION_DISTANCE, MARGIN, SECTOR_WIDT
 use macroquad::rand::gen_range;
 
 use crate::circulation::car::Car;
-use crate::circulation::road::Road;
+use crate::circulation::road::Route;
 use crate::circulation::statistics::*;
 use crate::circulation::Turning;
 
@@ -16,7 +16,7 @@ pub enum Direction {
 
 #[derive(PartialEq, Debug)]
 pub struct State {
-    pub roads: [Road; 4],
+    pub roads: [Route; 4],
     pub stats: Statistics,
     pub show_final_statistics: bool,
     pub random: bool,
@@ -27,10 +27,10 @@ impl State {
     pub fn new() -> State {
         State {
             roads: [
-                Road::new(Direction::North),
-                Road::new(Direction::East),
-                Road::new(Direction::South),
-                Road::new(Direction::West),
+                Route::new(Direction::North),
+                Route::new(Direction::East),
+                Route::new(Direction::South),
+                Route::new(Direction::West),
             ],
             stats: Statistics::default(),
             random: false,

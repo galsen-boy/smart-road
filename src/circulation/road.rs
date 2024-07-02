@@ -3,14 +3,14 @@ use rand::prelude::IteratorRandom;
 use crate::circulation::car::Car;
 use crate::circulation::{Direction, Statistics, Turning};
 #[derive(PartialEq, Debug, Clone)]
-pub struct Road {
+pub struct Route {
     direction: Direction,
     pub cars: [Vec<Car>; 3],
 }
 
-impl Road {
-    pub fn new(direction: Direction) -> Road {
-        Road {
+impl Route {
+    pub fn new(direction: Direction) -> Route {
+        Route {
             direction,
             cars: [Vec::new(), Vec::new(), Vec::new()],
         }
