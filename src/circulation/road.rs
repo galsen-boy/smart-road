@@ -84,7 +84,7 @@ impl Route {
         available
     }
 
-    // Add time for all cars that reached their destination and then remove from vector.
+    // Ajouter du temps pour toutes les voitures qui ont atteint leur destination, puis les supprimer du vecteur.
     pub fn cleanup_cars(&mut self, stats: &mut Statistics) {
         self.cars.iter().for_each(|cars| {
             cars.iter()
