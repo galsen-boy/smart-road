@@ -1,13 +1,13 @@
 use macroquad::prelude::*;
 
-const CAR_SPRITES: [&str; 7] = [
+const CAR_SPRITES: [&str; 3] = [
     "assets/cars/1.png",
     "assets/cars/2.png",
     "assets/cars/3.png",
-    "assets/cars/4.png",
-    "assets/cars/5.png",
-    "assets/cars/6.png",
-    "assets/cars/7.png",
+    // "assets/cars/4.png",
+    // "assets/cars/5.png",
+    // "assets/cars/6.png",
+    // "assets/cars/7.png",
 ];
 
 #[derive(PartialEq, Clone)]
