@@ -59,7 +59,7 @@ impl Car {
         // Loop through all cars which are within collision range (one sector)
         let mut distance = SCAN_DISTANCE;
         for car in cars.iter().filter(|c| {
-            self.longer_distance_to_Sortir(c)
+            self.longer_distance_to_exit(c)
                 && self.calc_dist(c) < SCAN_DISTANCE
                 && self.crossing_paths(c)
         }) {
@@ -139,9 +139,9 @@ impl Car {
         false
     }
 
-    /// ### longer_distance_to_Sortir
+    /// ### longer_distance_to_exit
     /// Check if `self` has a longer distance to the Sortir than `other`
-    fn longer_distance_to_Sortir(&self, other: &Car) -> bool {
+    fn longer_distance_to_exit(&self, other: &Car) -> bool {
         self.path.sectors.len() as f32 * SECTOR_WIDTH
             - (self.index as f32 * SECTOR_WIDTH + self.sector_pos())
             > other.path.sectors.len() as f32 * SECTOR_WIDTH
