@@ -3,7 +3,7 @@ mod common;
 mod test_config {}
 mod test_state {
     use crate::common;
-    use smart_road::traffic::state::*;
+    use smart_road::circulation::state::*;
 
     #[test]
     fn test_constructor() {
@@ -63,7 +63,7 @@ mod test_state {
 }
 mod test_statistics {
     use macroquad::rand::gen_range;
-    use smart_road::traffic::Statistics;
+    use smart_road::circulation::Statistics;
 
     #[test]
     fn max_vehicles() {

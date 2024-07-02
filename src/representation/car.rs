@@ -1,10 +1,10 @@
-use crate::traffic::Model;
+use crate::circulation::Model;
 use crate::{
     config::SECTOR_WIDTH,
-    traffic::{car::Car, Moving},
+    circulation::{car::Car, Moving},
 };
 use macroquad::prelude::*;
-pub fn render_car(car: &Car, textures: &[Texture2D]) {
+pub fn representation_car(car: &Car, textures: &[Texture2D]) {
     let texture = match car.model {
         Model::Standard => &textures[0],
         Model::Audi => &textures[1],

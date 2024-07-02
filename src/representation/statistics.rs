@@ -1,14 +1,14 @@
-use crate::traffic::Statistics;
+use crate::circulation::Statistics;
 use macroquad::prelude::*;
 
 use crate::config::{SECTOR_WIDTH, WINDOW_SIZE};
-use crate::render::{FONT_SIZE, TITLE_SIZE};
+use crate::representation::{FONT_SIZE, TITLE_SIZE};
 
 const TEXT_X_POS: f32 = CENTER_Y - 100.0;
 const CENTER_Y: f32 = WINDOW_SIZE as f32 / 2.0;
 
-pub fn render_statistics(stats: &Statistics) {
-    // Render a translucent rectangle as a backdrop
+pub fn representation_statistics(stats: &Statistics) {
+    // representation a translucent rectangle as a backdrop
     draw_rectangle(0.0, 0.0, WINDOW_SIZE as f32, WINDOW_SIZE as f32, BLACK);
 
     // Display title

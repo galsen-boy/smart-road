@@ -1,7 +1,7 @@
 use rand::prelude::IteratorRandom;
 
-use crate::traffic::car::Car;
-use crate::traffic::{Direction, Statistics, Turning};
+use crate::circulation::car::Car;
+use crate::circulation::{Direction, Statistics, Turning};
 #[derive(PartialEq, Debug, Clone)]
 pub struct Road {
     direction: Direction,

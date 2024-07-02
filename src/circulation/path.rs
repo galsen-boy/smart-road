@@ -1,5 +1,5 @@
-use crate::traffic::car::Turning;
-use crate::traffic::{Direction, Moving};
+use crate::circulation::car::Turning;
+use crate::circulation::{Direction, Moving};
 
 #[derive(Eq, Clone, Debug)]
 pub struct Sector {

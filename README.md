@@ -28,7 +28,7 @@ macroquad = "0.4.2"
 rand = "0.8.5"
 ```
 
-[macroquad](https://crates.io/crates/macroquad) for rendering, [rand](https://crates.io/crates/rand) for everything that requires randomization.
+[macroquad](https://crates.io/crates/macroquad) for representationing, [rand](https://crates.io/crates/rand) for everything that requires randomization.
 
 ## Description
 

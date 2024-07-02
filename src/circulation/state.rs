@@ -1,10 +1,10 @@
 use crate::config::{CLOSE_CALL_DISTANCE, COLLISION_DISTANCE, MARGIN, SECTOR_WIDTH};
 use macroquad::rand::gen_range;
 
-use crate::traffic::car::Car;
-use crate::traffic::road::Road;
-use crate::traffic::statistics::*;
-use crate::traffic::Turning;
+use crate::circulation::car::Car;
+use crate::circulation::road::Road;
+use crate::circulation::statistics::*;
+use crate::circulation::Turning;
 
 #[derive(Debug, Clone, Eq, PartialEq)]
 pub enum Direction {

@@ -1,7 +1,7 @@
 use crate::config::{
     ACCELERATION_DISTANCE, CRUISE_SPEED, MARGIN, SCAN_DISTANCE, SECTOR_WIDTH, WINDOW_SIZE,
 };
-use crate::traffic::*;
+use crate::circulation::*;
 
 impl Car {
     /// ### forward_scan

@@ -31,7 +31,7 @@ pub mod config {
 pub mod controls {
     use macroquad::prelude::*;
 
-    use crate::traffic::{Direction, State};
+    use crate::circulation::{Direction, State};
 
     pub fn handle_input(state: &mut State) {
         if is_key_pressed(KeyCode::Escape) && !state.show_final_statistics {
@@ -66,7 +66,7 @@ pub mod controls {
     }
 }
 
-pub mod traffic {
+pub mod circulation {
     pub use car::*;
    // pub use collision::*;
     pub use path::*;
@@ -83,11 +83,11 @@ pub mod traffic {
     pub mod collision;
 }
 
-pub mod render {
+pub mod representation {
     pub const FONT_SIZE: f32 = 20.0;
     pub const TITLE_SIZE: f32 = FONT_SIZE * 1.5;
 
-    pub use roads::render_textured_roads;
+    pub use roads::representation_textured_roads;
     pub use textures::Textures;
 
     pub mod roads;
@@ -95,9 +95,9 @@ pub mod render {
     pub mod car;
     pub mod textures;
 
-    pub use car::render_car;
+    pub use car::representation_car;
 
     pub mod statistics;
 
-    pub use statistics::render_statistics;
+    pub use statistics::representation_statistics;
 }

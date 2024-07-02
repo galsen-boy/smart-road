@@ -1,8 +1,8 @@
 use macroquad::rand::gen_range;
 use std::time::SystemTime;
 
-use crate::traffic::path::{Path, Sector};
-use crate::traffic::{Direction, Statistics};
+use crate::circulation::path::{Path, Sector};
+use crate::circulation::{Direction, Statistics};
 
 use crate::config::{
     ACCELERATION_DISTANCE, CLOSE_CALL_DISTANCE, FPS, MAX_VELOCITY, SCAN_DISTANCE, SECTOR_WIDTH,
