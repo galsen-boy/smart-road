@@ -50,24 +50,24 @@ impl Path {
 fn left_turn(direction: &Direction) -> Vec<Sector> {
     match direction {
         Direction::North => get_path(vec![
-            Sector::new(5, 0, Moving::Down),   // Entry
+            Sector::new(5, 0, Moving::Down),   // Entrée
             Sector::new(5, 6, Moving::Right),  // Turning-point
-            Sector::new(11, 6, Moving::Right), // Exit
+            Sector::new(11, 6, Moving::Right), // Sortir
         ]),
         Direction::East => get_path(vec![
-            Sector::new(11, 5, Moving::Left), // Entry
+            Sector::new(11, 5, Moving::Left), // Entrée
             Sector::new(5, 5, Moving::Down),  // Turning-point
-            Sector::new(5, 11, Moving::Down), // Exit
+            Sector::new(5, 11, Moving::Down), // Sortir
         ]),
         Direction::South => get_path(vec![
-            Sector::new(6, 11, Moving::Up),  // Entry
+            Sector::new(6, 11, Moving::Up),  // Entrée
             Sector::new(6, 5, Moving::Left), // Turning-point
-            Sector::new(0, 5, Moving::Left), // Exit
+            Sector::new(0, 5, Moving::Left), // Sortir
         ]),
         Direction::West => get_path(vec![
-            Sector::new(0, 6, Moving::Right), // Entry
+            Sector::new(0, 6, Moving::Right), // Entrée
             Sector::new(6, 6, Moving::Up),    // Turning-point
-            Sector::new(6, 0, Moving::Up),    // Exit
+            Sector::new(6, 0, Moving::Up),    // Sortir
         ]),
     }
 }
@@ -75,24 +75,24 @@ fn left_turn(direction: &Direction) -> Vec<Sector> {
 fn go_straight(direction: &Direction) -> Vec<Sector> {
     match direction {
         Direction::North => get_path(vec![
-            Sector::new(4, 0, Moving::Down),  // Entry
-            Sector::new(4, 5, Moving::Down),  // Mid-point
-            Sector::new(4, 11, Moving::Down), // Exit
+            Sector::new(4, 0, Moving::Down),  // Entrée
+            Sector::new(4, 5, Moving::Down),  // Point-median
+            Sector::new(4, 11, Moving::Down), // Sortir
         ]),
         Direction::East => get_path(vec![
-            Sector::new(11, 4, Moving::Left), // Entry
-            Sector::new(5, 4, Moving::Left),  // Mid-point
-            Sector::new(0, 4, Moving::Left),  // Exit
+            Sector::new(11, 4, Moving::Left), // Entrée
+            Sector::new(5, 4, Moving::Left),  // Point-median
+            Sector::new(0, 4, Moving::Left),  // Sortir
         ]),
         Direction::South => get_path(vec![
-            Sector::new(7, 11, Moving::Up), // Entry
-            Sector::new(7, 5, Moving::Up),  // Mid-point
-            Sector::new(7, 0, Moving::Up),  // Exit
+            Sector::new(7, 11, Moving::Up), // Entrée
+            Sector::new(7, 5, Moving::Up),  // Point-median
+            Sector::new(7, 0, Moving::Up),  // Sortir
         ]),
         Direction::West => get_path(vec![
-            Sector::new(0, 7, Moving::Right),  // Entry
-            Sector::new(5, 7, Moving::Right),  // Mid-point
-            Sector::new(11, 7, Moving::Right), // Exit
+            Sector::new(0, 7, Moving::Right),  // Entrée
+            Sector::new(5, 7, Moving::Right),  // Point-median
+            Sector::new(11, 7, Moving::Right), // Sortir
         ]),
     }
 }
@@ -100,24 +100,24 @@ fn go_straight(direction: &Direction) -> Vec<Sector> {
 fn right_turn(direction: &Direction) -> Vec<Sector> {
     match direction {
         Direction::North => get_path(vec![
-            Sector::new(3, 0, Moving::Down), // Entry
-            Sector::new(3, 3, Moving::Left), // Turning point
-            Sector::new(0, 3, Moving::Left), // Exit
+            Sector::new(3, 0, Moving::Down), // Entrée
+            Sector::new(3, 3, Moving::Left), // Tournant
+            Sector::new(0, 3, Moving::Left), // Sortir
         ]),
         Direction::East => get_path(vec![
-            Sector::new(11, 3, Moving::Left), // Entry
-            Sector::new(8, 3, Moving::Up),    // Turning point
-            Sector::new(8, 0, Moving::Up),    // Exit
+            Sector::new(11, 3, Moving::Left), // Entrée
+            Sector::new(8, 3, Moving::Up),    // Tournant
+            Sector::new(8, 0, Moving::Up),    // Sortir
         ]),
         Direction::South => get_path(vec![
-            Sector::new(8, 11, Moving::Up),    // Entry
-            Sector::new(8, 8, Moving::Right),  // Turning point
-            Sector::new(11, 8, Moving::Right), // Exit
+            Sector::new(8, 11, Moving::Up),    // Entrée
+            Sector::new(8, 8, Moving::Right),  // Tournant
+            Sector::new(11, 8, Moving::Right), // Sortir
         ]),
         Direction::West => get_path(vec![
-            Sector::new(0, 8, Moving::Right), // Entry
-            Sector::new(3, 8, Moving::Down),  // Turning point
-            Sector::new(3, 11, Moving::Down), // Exit
+            Sector::new(0, 8, Moving::Right), // Entrée
+            Sector::new(3, 8, Moving::Down),  // Tournant
+            Sector::new(3, 11, Moving::Down), // Sortir
         ]),
     }
 }

@@ -37,7 +37,7 @@ pub mod controls {
         if is_key_pressed(KeyCode::Escape) && !state.show_final_statistics {
             state.show_final_statistics = true;
         } else if is_key_pressed(KeyCode::Escape) && state.show_final_statistics {
-            std::process::exit(0);
+            std::process::Sortir(0);
         }
 
         if is_key_pressed(KeyCode::Up) {

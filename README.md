@@ -19,7 +19,7 @@ Generate a car in an available path by pressing:
 - `→` from the `West`
 - `R` continuously generate cars from random directions
 
-Press `Esc` display statistics. Press `Esc` again to exit.
+Press `Esc` display statistics. Press `Esc` again to Sortir.
 
 
 ### Dependencies
@@ -38,9 +38,9 @@ The screen is divided up into a 12x12 `grid` of `sectors` with equal size. The s
 Each car will then be assigned a path on the grid, here's an example:
 ```rust
 // Car generated from north, going left. Numbers being (x, y)
-Sector::new(5, 0, Moving::Down),   // Entry
+Sector::new(5, 0, Moving::Down),   // Entrée
 Sector::new(5, 6, Moving::Right),  // Turning-point
-Sector::new(11, 6, Moving::Right), // Exit
+Sector::new(11, 6, Moving::Right), // Sortir
 ```
 
 ### Collision detection

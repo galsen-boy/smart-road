@@ -62,7 +62,7 @@ impl PartialEq for Car {
 impl Car {
     pub fn new(direction: Direction, turning: Turning, id: usize) -> Car {
         let path = Path::new(&direction, &turning);
-        let (x, y) = get_entry_coords(&path.sectors[0], &direction);
+        let (x, y) = get_Entrée_coords(&path.sectors[0], &direction);
         Car {
             x,
             y,
@@ -309,7 +309,7 @@ impl Car {
     }
 }
 
-fn get_entry_coords(p: &Sector, direction: &Direction) -> (f32, f32) {
+fn get_Entrée_coords(p: &Sector, direction: &Direction) -> (f32, f32) {
     match direction {
         Direction::West => (
             SECTOR_WIDTH * p.get_x() as f32 - SECTOR_WIDTH,

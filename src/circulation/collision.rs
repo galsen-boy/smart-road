@@ -53,13 +53,13 @@ impl Car {
 
     /// ### ray_casting
     /// Check if there are any cars in front of self are inside the `SCAN_DISTANCE`.
-    /// If these cars have a shorter distance to the exit than self, brake according to the closest
+    /// If these cars have a shorter distance to the Sortir than self, brake according to the closest
     /// of these cars.
     pub fn ray_casting(&mut self, cars: &[Car]) {
         // Loop through all cars which are within collision range (one sector)
         let mut distance = SCAN_DISTANCE;
         for car in cars.iter().filter(|c| {
-            self.longer_distance_to_exit(c)
+            self.longer_distance_to_Sortir(c)
                 && self.calc_dist(c) < SCAN_DISTANCE
                 && self.crossing_paths(c)
         }) {
@@ -139,9 +139,9 @@ impl Car {
         false
     }
 
-    /// ### longer_distance_to_exit
-    /// Check if `self` has a longer distance to the exit than `other`
-    fn longer_distance_to_exit(&self, other: &Car) -> bool {
+    /// ### longer_distance_to_Sortir
+    /// Check if `self` has a longer distance to the Sortir than `other`
+    fn longer_distance_to_Sortir(&self, other: &Car) -> bool {
         self.path.sectors.len() as f32 * SECTOR_WIDTH
             - (self.index as f32 * SECTOR_WIDTH + self.sector_pos())
             > other.path.sectors.len() as f32 * SECTOR_WIDTH
