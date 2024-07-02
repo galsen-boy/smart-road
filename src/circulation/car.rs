@@ -83,7 +83,7 @@ impl Car {
             path,
             direction,
             time: SystemTime::now(),
-            model: match gen_range(0, 6) {
+            model: match gen_range(0, 9) {
                 0 => Model::TaxiVert,
                 1 => Model::TaxiOrange,
                 2 => Model::TaxiNoire,
