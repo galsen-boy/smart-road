@@ -38,7 +38,7 @@ pub enum Model {
     TaxiOrange,
     TaxiNoire,
 }
-// Adjust odds of getting certain cars here. Might scratch and use `gen_range` instead
+// Ajuster les chances d'obtenir certaines voitures ici. Pourrait revoir et utiliser gen_range à la place.
 
 #[derive(Clone, Debug)]
 pub struct Car {
@@ -92,19 +92,19 @@ impl Car {
     }
 
     /// ### move_car
-    /// Move the car in `Path` and also in `Car.x` and `Car.y`.
+    /// Déplacer la voiture dans Path ainsi que dans Car.x et Car.y.
     pub fn move_car(&mut self, all_cars: &[Car]) {
         self.move_in_path(all_cars);
         self.moving = self.sector(0).moving;
         self.change_pos(all_cars);
 
-        // car is turning right, no further logic needed
+        // La voiture tourne à droite, aucune logique supplémentaire nécessaire.
         if self.turning == Turning::Right {
             self.accelerate(SCAN_DISTANCE);
             return;
         }
 
-        // car is still entering the intersection
+        // La voiture est encore en train d'entrer dans l'intersection.
         if self.index < 2 {
             return;
         }
@@ -121,19 +121,19 @@ impl Car {
             self.center_scan(all_cars);
         }
 
-        // car going straight has reached the other side of the intersection
+        // La voiture qui va tout droit a atteint l'autre côté de l'intersection.
         if self.index >= 8 {
             self.forward_scan(all_cars);
             return;
         }
 
-        // Adjust position in x and y axis
+        // Adjuster la position sur les axes x et y.
         self.adjust_position();
 
-        // send rays a certain distance and check for cars
+        // Envoyer des rayons sur une certaine distance et vérifier la présence de voitures.
         self.ray_casting(all_cars);
 
-        // scan in front of car to see if it is safe to accelerate, or if it should stop
+        // Scanner devant la voiture pour déterminer s'il est sûr d'accélérer ou s'il faut s'arrêter.
         self.forward_scan(all_cars);
     }
 
@@ -164,8 +164,8 @@ impl Car {
         self.vel = 0.0;
     }
 
-    /// ### change_pos
-    /// Change position of car. Will go faster if no cars around and slower if too many cars around.
+   
+    /// Modifier la position de la voiture. Elle ira plus vite s'il n'y a pas de voitures autour et plus lentement s'il y a trop de voitures autour.
     fn change_pos(&mut self, cars: &[Car]) {
         let x = match cars
             .iter()
@@ -184,8 +184,8 @@ impl Car {
         }
     }
 
-    /// ### sector_position
-    /// Get the distance travelled into a `Sector`. This is used to break deadlocks.
+    
+    /// Obtenir la distance parcourue dans un Sector. Cela est utilisé pour résoudre les impasses.
     pub fn sector_pos(&self) -> f32 {
         match self.moving {
             Moving::Up => SECTOR_WIDTH - (self.y - self.sector(0).get_y() as f32 * SECTOR_WIDTH),
@@ -195,9 +195,9 @@ impl Car {
         }
     }
 
-    /// ### move_in_path
-    /// Moves the car inside its own `Path` by incrementing `path.current`.
-    /// Stop if a car in sector ahead.
+
+    /// Déplace la voiture le long de son propre Path en incrémentant path.current.
+/// S'arrête s'il y a une voiture dans le secteur devant.
     fn move_in_path(&mut self, cars: &[Car]) {
         if self.index + 2 > self.path.sectors.len() {
             return;
@@ -245,7 +245,7 @@ impl Car {
         }
     }
 
-    // Helper functions for `move_in_path`
+    // Fonctions auxiliaires `pour move_in_path`
     fn update_up(&self, next: &Sector) -> bool {
         self.y - self.vel * MAX_VELOCITY <= next.get_y() as f32 * SECTOR_WIDTH
     }
@@ -262,8 +262,7 @@ impl Car {
         self.x - self.vel * MAX_VELOCITY <= next.get_x() as f32 * SECTOR_WIDTH
     }
 
-    /// ### update_direction
-    /// Updates the direction of the car based on current sector in `Path`
+    /// Mets à jour la direction de la voiture en fonction du secteur actuel dans `Path`.
     pub fn adjust_position(&mut self) {
         let previous = self.index - 1;
         let previous_sector = &self.path.sectors[previous];
@@ -279,13 +278,13 @@ impl Car {
         }
     }
 
-    /// ### get_sector
+   
     /// Get the sector of a `Car` specified by `n`.
     pub fn sector(&self, n: usize) -> Sector {
         self.path.sectors[self.index + n].clone()
     }
 
-    /// ### get_borders
+    
     /// Get the borders of a `Car`.
     pub fn borders(&self) -> Borders {
         Borders {

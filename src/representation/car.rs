@@ -12,7 +12,7 @@ pub fn representation_car(car: &Car, textures: &[Texture2D]) {
         Model::TaxiOrange => &textures[3],
         Model::TaxiNoire => &textures[4],
     };
-    // Determine which sprite to use based on the car's direction
+    // Déterminer quel sprite utiliser en fonction de la direction de la voiture.
     let rotation: f32 = match car.moving {
         Moving::Up => 0.0,
         Moving::Left => -90.0,
@@ -20,9 +20,9 @@ pub fn representation_car(car: &Car, textures: &[Texture2D]) {
         Moving::Right => -270.0,
     };
     let src_rect = Rect::new(0.0, 0.0, SECTOR_WIDTH, SECTOR_WIDTH);
-    // Scale down by 80%
+    // réduire à l'échelle de 80%
     let scaled_size = SECTOR_WIDTH * 0.9;
-    // Calculate the position to center the car in the sector
+    // Calculer la position pour centrer la voiture dans le secteur
     let center_x = car.x + (SECTOR_WIDTH - scaled_size) / 2.0;
     let center_y = car.y + (SECTOR_WIDTH - scaled_size) / 2.0;
 
@@ -34,7 +34,7 @@ pub fn representation_car(car: &Car, textures: &[Texture2D]) {
         DrawTextureParams {
             source: Some(src_rect),
             rotation: rotation.to_radians(),
-            dest_size: Some(Vec2::new(scaled_size, scaled_size)), // Set to 80% of the sector size
+            dest_size: Some(Vec2::new(scaled_size, scaled_size)), // Définir à 80% de la taille du secteur
             ..Default::default()
         },
     );

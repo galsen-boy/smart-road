@@ -8,10 +8,10 @@ const TEXT_X_POS: f32 = CENTER_Y - 100.0;
 const CENTER_Y: f32 = WINDOW_SIZE as f32 / 2.0;
 
 pub fn representation_statistics(stats: &Statistics) {
-    // representation a translucent rectangle as a backdrop
+    // Rendre une rectangle translucide comme toile de fond.
     draw_rectangle(0.0, 0.0, WINDOW_SIZE as f32, WINDOW_SIZE as f32, BLACK);
 
-    // Display title
+    // Afficher le titre
     draw_text(
         "Final Statistics:",
         TEXT_X_POS,
@@ -20,7 +20,7 @@ pub fn representation_statistics(stats: &Statistics) {
         WHITE,
     );
 
-    // Display statistics
+    // Afficher les statistiques
     draw_text(
         &format!("Max Vehicles: {} cars", stats.max_vehicles()),
         TEXT_X_POS,
