@@ -5,14 +5,14 @@ use crate::circulation::{Direction, Statistics, Turning};
 #[derive(PartialEq, Debug, Clone)]
 pub struct Route {
     direction: Direction,
-    pub cars: [Vec<Car>; 5],
+    pub cars: [Vec<Car>; 7],
 }
 
 impl Route {
     pub fn new(direction: Direction) -> Route {
         Route {
             direction,
-            cars: [Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new()],
+            cars: [Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new()],
         }
     }
 
@@ -51,8 +51,8 @@ impl Route {
         paths.into_iter().choose(&mut rand::thread_rng())
     }
 
-    fn available_lanes(&self) -> [bool; 5] {
-        let mut available = [false, false, false,false,false];
+    fn available_lanes(&self) -> [bool; 7] {
+        let mut available = [false, false, false,false,false,false,false];
 
         if self.cars[0].is_empty() {
             available[0] = true;
@@ -95,5 +95,9 @@ impl Route {
         self.cars[0].retain(|car| !car.is_done());
         self.cars[1].retain(|car| !car.is_done());
         self.cars[2].retain(|car| !car.is_done());
+        self.cars[3].retain(|car| !car.is_done());
+        self.cars[4].retain(|car| !car.is_done());
+        self.cars[5].retain(|car| !car.is_done());
+        self.cars[6].retain(|car| !car.is_done());
     }
 }
