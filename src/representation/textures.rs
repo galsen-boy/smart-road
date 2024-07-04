@@ -23,7 +23,7 @@ impl Textures {
             cars.push(load_texture(sprite).await.unwrap())
         }
         Self {
-            bg: load_texture("assets/intersection.png").await.unwrap(),
+            bg: load_texture("assets/road.png").await.unwrap(),
             cars,
         }
     }
