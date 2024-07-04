@@ -9,7 +9,7 @@ const CENTER_Y: f32 = WINDOW_SIZE as f32 / 2.0;
 
 pub fn representation_statistics(stats: &Statistics) {
     // Rendre une rectangle translucide comme toile de fond.
-    draw_rectangle(0.0, 0.0, WINDOW_SIZE as f32, WINDOW_SIZE as f32, BLACK);
+    draw_rectangle(0.0, 0.0, WINDOW_SIZE as f32, WINDOW_SIZE as f32, BLUE);
 
     // Afficher le titre
     draw_text(

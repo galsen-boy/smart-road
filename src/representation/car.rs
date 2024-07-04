@@ -13,6 +13,8 @@ pub fn representation_car(car: &Car, textures: &[Texture2D]) {
         Model::TaxiNoire => &textures[4],
         Model::TaxiBleu => &textures[5],
         Model::TaxiRouge => &textures[6],
+        Model::Ambulance => &textures[7],
+        Model::Garbage => &textures[8],
     };
     // Déterminer quel sprite utiliser en fonction de la direction de la voiture.
     let rotation: f32 = match car.moving {

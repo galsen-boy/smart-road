@@ -66,7 +66,7 @@ impl State {
         });
     }
     pub fn add_car(&mut self, direction: Direction) {
-        if self.get_all_cars().iter().filter(|c| c.vel == 0.0).count() >= 8 {
+        if self.get_all_cars().iter().filter(|c| c.vel == 0.0).count() >= 9 {
             return;
         }
         match direction {
@@ -148,8 +148,8 @@ fn detect_deadlock(other_cars: &[Car], car: &mut Car) -> bool {
         .filter(|&c| middle_sectors.contains(&(c.sector(0).get_x(), c.sector(0).get_y())))
         .collect();
 
-    if car.index == 7 && car.sector_pos() > SECTOR_WIDTH - MARGIN {
-        return cars.len() >= 6;
+    if car.index == 9 && car.sector_pos() > SECTOR_WIDTH - MARGIN {
+        return cars.len() >= 8;
     }
 
     if car.index == 4 && car.sector_pos() > SECTOR_WIDTH - MARGIN {
@@ -191,7 +191,7 @@ fn detect_deadlock(other_cars: &[Car], car: &mut Car) -> bool {
                 }
             }
         }
-        return cars.len() >= 7;
+        return cars.len() >= 9;
     }
     false
 }
