@@ -4,7 +4,7 @@
 #### Authors:
 - [Mouhamadu Fadilou Diop](https://learn.zone01dakar.sn/git/mouhamadoufadiop/smart-road)
 - [Serigne Abdou Khadre Wade](https://learn.zone01dakar.sn/git/serwade/)
-- [](https://learn.zone01dakar.sn/git//)
+- [Daibou Ba](https://learn.zone01dakar.sn/git//daiba)
 
 ### Run
 Clone the repository, go into root and write:
