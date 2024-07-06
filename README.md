@@ -26,6 +26,7 @@ Press `Esc` display statistics. Press `Esc` again to Sortir.
 ```toml
 macroquad = "0.4.2"
 rand = "0.8.5"
+tokio = { version = "1", features = ["full"] }
 ```
 
 [macroquad](https://crates.io/crates/macroquad) for representationing, [rand](https://crates.io/crates/rand) for everything that requires randomization.

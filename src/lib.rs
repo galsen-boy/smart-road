@@ -19,7 +19,7 @@ pub mod config {
     pub const RANDOM_INTERVAL: u64 = WINDOW_SIZE as u64 / SPEED_LIMIT as u64;
     pub fn window_conf() -> Conf {
         Conf {
-            window_title: "Smart-Road | Grit:lab".to_owned(),
+            window_title: "Smart-Road | Z01-Dakar".to_owned(),
             window_width: WINDOW_SIZE,
             window_height: WINDOW_SIZE,
             window_resizable: false,
