@@ -306,6 +306,7 @@ impl Car {
     pub fn add_time(&self, stats: &mut Statistics) {
         let duration = SystemTime::now().duration_since(self.time).unwrap();
         stats.set_time(duration.as_secs_f32());
+        stats.set_average_time();
     }
 
     /// ### is_done

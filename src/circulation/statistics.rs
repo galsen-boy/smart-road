@@ -9,6 +9,7 @@ pub struct Statistics {
     min_time: f32,
     close_calls: u32,
     collisions: u32,
+    average_time: f32,
 }
 
 impl Statistics {
@@ -21,6 +22,7 @@ impl Statistics {
             min_time: 0.0,
             close_calls: 0,
             collisions: 0,
+            average_time: 0.0,
         }
     }
 
@@ -53,6 +55,9 @@ impl Statistics {
     pub fn set_time(&mut self, time: f32) {
         self.set_min_time(time);
         self.set_max_time(time);
+    }
+    pub fn set_average_time(&mut self) {
+        self.average_time = ((self.max_time + self.min_time) / 2.0).abs();
     }
     pub fn set_max_time(&mut self, max_time: f32) {
         if max_time > self.max_time {
@@ -90,6 +95,9 @@ impl Statistics {
     }
     pub fn min_time(&self) -> f32 {
         self.min_time
+    }
+    pub fn average_time(&self) -> f32 {
+        self.average_time
     }
     pub fn close_calls(&self) -> u32 {
         (self.close_calls / 2) / FPS as u32
