@@ -35,12 +35,12 @@ pub enum Model {
     Standard,
     Sport,
     TaxiVert,
-    TaxiOrange,
-     TaxiNoire,
-     TaxiBleu,
-     TaxiRouge,
-     Ambulance,
-     Garbage,
+    // TaxiOrange,
+    //  TaxiNoire,
+    //  TaxiBleu,
+    //  TaxiRouge,
+    //  Ambulance,
+    //  Garbage,
 }
 // Ajuster les chances d'obtenir certaines voitures ici. Pourrait revoir et utiliser gen_range à la place.
 
@@ -85,15 +85,15 @@ impl Car {
             path,
             direction,
             time: SystemTime::now(),
-            model: match gen_range(0, 11) {
+            model: match gen_range(0, 5) {
                 0 => Model::TaxiVert,
                 1 => Model::Sport,
-                 2 => Model::TaxiNoire,
-                 3 => Model::TaxiRouge,
-                 4 => Model::TaxiBleu,
-                 5 => Model::TaxiOrange,
-                 6 => Model::Ambulance,
-                 7 => Model::Garbage,
+                //  2 => Model::TaxiNoire,
+                //  3 => Model::TaxiRouge,
+                //  4 => Model::TaxiBleu,
+                //  5 => Model::TaxiOrange,
+                //  6 => Model::Ambulance,
+                //  7 => Model::Garbage,
                 _ => Model::Standard,
             },
         }
